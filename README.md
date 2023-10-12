@@ -4,39 +4,39 @@ Cisco TAC First Responder script for ISE.
 
 These hosted scripts streamline the generation and transmission of diagnositic data from a ISE deployment to Cisco TAC.
 
-## Collect a DART on Windows
+## Collect on Windows
 
-Work - in - Progress
-
-````
+```
+Work-in-Progress.  This script is not yet ready for use.
+```
 
 ## Collect on MAC
 
 The script is written for zsh, the default shell for the `Terminal.app` (Since Mac OS Catalina). Have the user open the `Terminal.app` and then paste the following in (with the `cxdUsername` and `cxdToken` replaced with the values you received from the Cisco TAC Engineer).
 
-The script will do the following:
-    - Download and install a copy of python into the following director ~/.cisco_firstresponder
-    - Setup a virtual environment for the python install and install the python dependencies
-        - scrapli[asyncssh]
-        - httpx
-    - Download the script `mac_ise_collection.py` into the following directory ~/.cisco_firstresponder
-    - Execute the mac_ise_collection.py script which does:
-        - Asks the user for the ISE hostname or IP address and user/password (ssh)
-        - Connect to the server and find the deployment info
-        - Ask the user for which nodes to collect data from.  For each node selected:
-            - Connect via SSH
-            - Collect a "show tech-support" and upload it to the CX Drive (CXD)
-            - Configure a "repository" on the ISE node (sftp to cxd.cisco.com)
-            - Collect a diagnostic bundle and upload it to the CX Drive (CXD)
-
 ```zsh
 curl https://raw.githubusercontent.com/CiscoCX/CiscoTacFirstResponder-ISE/main/mac_ise_collection.zsh | cxdUsername=611111111 cxdToken=mkDOLk2YO9SyuEkz zsh -s
-````
+```
 
-Example Output:
+The script will do the following:
+
+- Download and install a copy of python from [https://python.org](https://python.org) into the following user directory `~/.cisco_firstresponder``
+- Setup a virtual environment for the python install and install the python dependencies
+  - scrapli[asyncssh]
+  - httpx
+- Download the script `mac_ise_collection.py` into the following directory `~/.cisco_firstresponder``
+- Execute the `mac_ise_collection.py`` script which does:
+  - Asks the user for the ISE hostname or IP address and user/password (ssh)
+  - Connect to the server and find the deployment info
+  - Ask the user for which nodes to collect data from. For each node selected:
+    - Connect via SSH
+    - Collect a "show tech-support" and upload it to the CX Drive (CXD)
+    - Configure a "repository" on the ISE node (sftp to cxd.cisco.com)
+    - Collect a diagnostic bundle and upload it to the CX Drive (CXD)
+
+**Example Output:**
 
 ```
-➜  ~ zsh mac_ise_collection.zsh
 Welcome to the Cisco First Responder installer for MacOS.
 
 This script will download and install a local copy of python3
@@ -145,8 +145,6 @@ Successfully installed anyio-4.0.0 asyncssh-2.14.0 certifi-2023.7.22 cffi-1.16.0
 
 
 
-Please enter the TAC Case Number: 611111111
-Please enter the CXD Token provided by TAC: TICGSSiiMsIabcd
 Please enter the hostname or IP address of the ISE node: 172.18.124.20
 Please enter the username to connect to the ISE node: admin
 Please enter the password to connect to the ISE node: *******
