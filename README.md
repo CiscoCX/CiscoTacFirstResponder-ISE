@@ -15,7 +15,7 @@ Work-in-Progress.  This script is not yet ready for use.
 The script is written for zsh, the default shell for the `Terminal.app` (Since Mac OS Catalina). Have the user open the `Terminal.app` and then paste the following in (with the `cxdUsername` and `cxdToken` replaced with the values you received from the Cisco TAC Engineer).
 
 ```zsh
-curl https://raw.githubusercontent.com/CiscoCX/CiscoTacFirstResponder-ISE/main/mac_ise_collection.zsh | cxdUsername=611111111 cxdToken=mkDOLk2YO9SyuEkz zsh -s
+curl https://raw.githubusercontent.com/CiscoCX/CiscoTacFirstResponder-ISE/main/mac_ise_collection.zsh | CXD)SR=611111111 CXD_TOKEN=mkDOLk2YO9SyuEkz zsh -s
 ```
 
 The script will do the following:
