@@ -71,6 +71,6 @@ else
     python3 -m pip install httpx "scrapli[asyncssh]"
 fi;
 
-curl https://gitlab-sjc.cisco.com/jyoungta-scratch-area/firstresponderise/-/raw/main/mac_ise_collection.py > ~/.cisco_firstresponder/mac_ise_collection.py
+curl https://raw.githubusercontent.com/CiscoCX/CiscoTacFirstResponder-ISE/main/mac_ise_collection > ~/.cisco_firstresponder/mac_ise_collection.py
 python3 ~/.cisco_firstresponder/mac_ise_collection.py
 
